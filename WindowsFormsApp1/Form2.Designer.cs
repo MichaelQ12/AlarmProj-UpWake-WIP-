@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,13 +44,10 @@
             this.alarmset1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,6 +63,41 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(647, 421);
             this.panel2.TabIndex = 10;
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_Clicks);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(13)))), ((int)(((byte)(30)))));
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.ForeColor = System.Drawing.Color.LightCoral;
+            this.panel3.Location = new System.Drawing.Point(178, 339);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(296, 41);
+            this.panel3.TabIndex = 9;
+            this.panel3.Visible = false;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button5.Location = new System.Drawing.Point(212, 10);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 23);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Set URL";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(14, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(183, 20);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Enter a URL to be opened";
             // 
             // panel1
             // 
@@ -73,6 +108,7 @@
             this.panel1.Size = new System.Drawing.Size(440, 132);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_Clicks);
             // 
             // label1
             // 
@@ -87,6 +123,7 @@
             this.label1.Text = "00:00:00";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_Clicks);
             // 
             // groupBox1
             // 
@@ -103,6 +140,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Time";
             this.groupBox1.Visible = false;
+            this.groupBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.groupBox1_MouseClick);
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
             // button4
@@ -196,41 +234,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(13)))), ((int)(((byte)(30)))));
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.ForeColor = System.Drawing.Color.LightCoral;
-            this.panel3.Location = new System.Drawing.Point(178, 339);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(296, 41);
-            this.panel3.TabIndex = 9;
-            this.panel3.Visible = false;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(14, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Enter a URL to be opened";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(212, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Set URL";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,18 +250,19 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox1;
+       
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
@@ -269,7 +273,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panel3;
+       
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button5;
     }

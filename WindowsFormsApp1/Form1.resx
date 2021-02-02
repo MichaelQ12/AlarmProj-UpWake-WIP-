@@ -162,6 +162,15 @@
   <data name="&gt;&gt;buttonexit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="iconPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 7</value>
+  </data>
+  <data name="iconPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="iconPictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;iconPictureBox1.Name" xml:space="preserve">
     <value>iconPictureBox1</value>
   </data>
@@ -197,27 +206,6 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="iconPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 7</value>
-  </data>
-  <data name="iconPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="iconPictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox1.Name" xml:space="preserve">
-    <value>iconPictureBox1</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox1.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconPictureBox, FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -269,90 +257,6 @@
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;iconButton3.Name" xml:space="preserve">
-    <value>iconButton3</value>
-  </data>
-  <data name="&gt;&gt;iconButton3.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;iconButton3.Parent" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;iconButton3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox2.Name" xml:space="preserve">
-    <value>iconPictureBox2</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox2.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconPictureBox, FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox2.Parent" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;iconPictureBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;iconButton2.Name" xml:space="preserve">
-    <value>iconButton2</value>
-  </data>
-  <data name="&gt;&gt;iconButton2.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;iconButton2.Parent" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;iconButton2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;iconButton1.Name" xml:space="preserve">
-    <value>iconButton1</value>
-  </data>
-  <data name="&gt;&gt;iconButton1.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;iconButton1.Parent" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;iconButton1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Sidepanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Sidepanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
-  </data>
-  <data name="Sidepanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 487</value>
-  </data>
-  <data name="Sidepanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;Sidepanel.Name" xml:space="preserve">
-    <value>Sidepanel</value>
-  </data>
-  <data name="&gt;&gt;Sidepanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Sidepanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Sidepanel.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="iconButton3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -524,6 +428,30 @@
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="Sidepanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Sidepanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 40</value>
+  </data>
+  <data name="Sidepanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 487</value>
+  </data>
+  <data name="Sidepanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;Sidepanel.Name" xml:space="preserve">
+    <value>Sidepanel</value>
+  </data>
+  <data name="&gt;&gt;Sidepanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Sidepanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Sidepanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

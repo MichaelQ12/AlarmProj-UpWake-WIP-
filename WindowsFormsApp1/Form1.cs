@@ -14,11 +14,14 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        static Form4PopUp Message = new Form4PopUp();
+        
+        static Form2 Home = new Form2(ref Message);
+        static Form3 FAlarms = new Form3(ref Home.Alarms, ref Home.Sounds, Home.dataConnect);
         
         public Point mousePosition;
 
-        Form2 Home = new Form2();
-        Form3 Alarms = new Form3();
+        private Form currentForm = null;
 
         public Form1()
         {
@@ -27,19 +30,23 @@ namespace WindowsFormsApp1
             InitializeComponent();
             currentForm = Home;
             openChild(Home);
-           
-
+            SetMessageLocation(Location);
         }
 
-      
-        
+        public void SetMessageLocation(Point xy)
+        {
+            int x = panel2.Location.X + Home.panel3.Location.X+ xy.X+75;
+            int y = panel2.Location.Y + Home.panel3.Location.Y+ xy.Y;
+            Message.Location = new Point(x, y);
+        }
+
 
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
           
-
+             SetMessageLocation(Location);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,10 +54,7 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
       
 
@@ -73,9 +77,11 @@ namespace WindowsFormsApp1
                                                                   
                 //label3.Text = ("(" + mousePose.X + " " + mousePose.Y + ")");
                 Location = mousePose;
-                //Due to negative value of mousePosition that was added, mousePose now represents new position of top left form corner
-            }
 
+                //Due to negative value of mousePosition that was added, mousePose now represents new position of top left form corner
+                
+            }
+            SetMessageLocation(Location);
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -100,12 +106,12 @@ namespace WindowsFormsApp1
         private void iconButton2_Click(object sender, EventArgs e)
         {
            
-            openChild(Alarms);
+            openChild(FAlarms);
 
 
         }
 
-        private Form currentForm = null;
+        
         private void openChild(Form child)
         {
             if (currentForm != null)
@@ -114,9 +120,9 @@ namespace WindowsFormsApp1
                 currentForm = child;
                 child.TopLevel = false;
                 
-                child.Dock = DockStyle.Fill;
+               
                 panel2.Controls.Add(child);
-                panel2.Tag = child;
+               
                 child.BringToFront();
                 child.Show();
             }
@@ -129,8 +135,27 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Alarms.ListClear();
-            Alarms.ListPopulate(Home.Alarms);
+            FAlarms.ListClear();
+            FAlarms.ListPopulate(Home.Alarms, Home.Sounds);
         }
+
+      
+        public void Control_ClicksHome(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;   // Sender gives you which control is clicked.
+            if (control != Home.groupBox1|| control != Home.panel3) { 
+            //MessageBox.Show(control.Name.ToString());
+                Home.groupBox1.Visible = false;
+                Home.panel3.Visible = false;
+            }
+            if (control != FAlarms.dataGridView1)
+            {
+                //MessageBox.Show(control.Name.ToString());
+                FAlarms.dataGridView1.ClearSelection();
+                FAlarms.DeleteEditP.Visible = false;
+            }
+        }
+
+     
     }
 }

@@ -14,8 +14,14 @@ using System.Data.SqlClient;
 namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
+
+      
+
     {
-        SqlConnection dataConnect = new SqlConnection("Data Source=LAPTOP-HE44SG9B\\SQLEXPRESS; Initial Catalog=Test1; Integrated Security=TRUE");
+        Form4PopUp Form2Message;
+       
+
+        public SqlConnection dataConnect = new SqlConnection("Data Source=LAPTOP-HE44SG9B\\SQLEXPRESS; Initial Catalog=Test1; Integrated Security=TRUE");
         SqlDataAdapter dataPopulate = new SqlDataAdapter();
         
         public Point mousePosition;
@@ -28,22 +34,31 @@ namespace WindowsFormsApp1
 
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
-        public Form2()
+        public Form2(ref Form4PopUp message)
         {
-        
+
+
+            Form2Message = message;
+           
             InitializeComponent();
+
+
+            Form2Message.TopLevel = true;
+            Form2Message.BringToFront();
+            //Form2.Controls.Add(Message); Message .opacity has no effect since form4 is attached to form2?
+            Form2Message.Show();
 
             label1.Text = DateTime.Now.ToString("h:mm:ss tt");
 
             
-                SqlCommand command = new SqlCommand("SELECT ALARMSOUND, ALARMTIME FROM tbluserAlarms;", dataConnect);
+            SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER(ORDER BY ALARMTIME) AS RowNum, ALARMTIME, ALARMSOUND FROM tbluserAlarms ", dataConnect);
                 dataConnect.Open();
                 SqlDataReader reader = command.ExecuteReader();
                
                 while (reader.Read())
                 {
 
-                   Sounds.Add(reader.GetValue(0));
+                   Sounds.Add(reader.GetValue(2));
                     Alarms.Add(reader.GetValue(1));
                  
                 }
@@ -58,17 +73,15 @@ namespace WindowsFormsApp1
 
         private void alarmset1_Click(object sender, EventArgs e)
         {
+          
+          
             Sounds.Add("0");//add 0 to sound array for tracking if user sets custom sound, assumes no custom sound by adding 0 on press
                             //0 is default sound
             groupBox1.Visible = true;
             
-           
         }
 
 
-       
-
-       
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -79,16 +92,9 @@ namespace WindowsFormsApp1
     
        
 
-
-        
-
-        
-
-      
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+           
             label1.Text = DateTime.Now.ToLongTimeString();
 
 
@@ -119,7 +125,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        player.SoundLocation = @"C:Madeon - Pop Culture (live mashup).wav";//default sound
+                        player.SoundLocation = @"C:\Users\micha\Music\Big Dab Music but in wav form\Madeon - Pop Culture (live mashup).wav";//default sound
                         player.Play();
                     }
                     
@@ -127,6 +133,7 @@ namespace WindowsFormsApp1
                    
                     AlarmRemove(Alarm);
                     button2.Visible = true;
+                  
                     }
                 
 
@@ -218,6 +225,9 @@ namespace WindowsFormsApp1
                 filePath = openFileDialog1.FileName;
                 Sounds.Add(filePath);
                 Console.WriteLine(filePath);
+
+                Form2Message.PopStart("Custom Sound Set");
+                
             }
             else
             {
@@ -228,6 +238,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
+     
             panel3.Visible = true;
         }
 
@@ -236,10 +247,7 @@ namespace WindowsFormsApp1
             ControlPaint.DrawBorder(e.Graphics, this.panel3.ClientRectangle, Color.LightCoral, ButtonBorderStyle.Solid);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+       
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -249,13 +257,45 @@ namespace WindowsFormsApp1
                 Sounds.RemoveAt(Sounds.Count - 1);//removes added 0 on first button press when custom sound added 
                 Sounds.Add(textBox1.Text);
                 panel3.Visible = false;
+                textBox1.Text= "Enter a URL to be opened";
+                Form2Message.PopStart("Link Set");
+                
+
             }
            else if (Uri.IsWellFormedUriString(textBox1.Text, UriKind.Absolute) == false)
             {
+                
                 panel3.Visible = false;
+                textBox1.Text = "Enter a URL to be opened";
+                Form2Message.PopStart("Link Error");
+               
             }
 
 
         }
+
+   
+        
+
+        private void groupBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+            panel3.Visible = false;
+        }
+
+
+        public void Control_Clicks(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;   // Sender gives you which control is clicked.
+            if (control != groupBox1 || control != panel3)
+            {
+                //MessageBox.Show(control.Name.ToString());
+                groupBox1.Visible = false;
+                panel3.Visible = false;
+            }
+        }
+
+
+
     }
 }

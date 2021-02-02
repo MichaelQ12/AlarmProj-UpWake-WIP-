@@ -69,7 +69,7 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Name = "panel1";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -83,6 +83,7 @@
             resources.ApplyResources(this.iconPictureBox1, "iconPictureBox1");
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // label2
             // 
@@ -104,6 +105,7 @@
             this.Sidepanel.Controls.Add(this.label4);
             resources.ApplyResources(this.Sidepanel, "Sidepanel");
             this.Sidepanel.Name = "Sidepanel";
+            this.Sidepanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // iconButton3
             // 
@@ -129,6 +131,7 @@
             resources.ApplyResources(this.iconPictureBox2, "iconPictureBox2");
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // iconButton2
             // 
@@ -163,12 +166,14 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
             this.label4.Name = "label4";
+            this.label4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // timer1
             // 
@@ -182,6 +187,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Snow;
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Control_ClicksHome);
             // 
             // Form1
             // 
